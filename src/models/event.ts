@@ -11,8 +11,17 @@ export interface Event{
 
     nbTicketDispo? : number ; 
 
+    nbPersonInterest : number ;
+
     listComments? : Comment[];
 
+    categ?: string; 
+
+    dateDebutFest? : number ; 
+
+    dateFinFest? : number ; 
+    
+    eventsFest?: Event[]; 
 
 
 }

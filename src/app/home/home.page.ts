@@ -35,16 +35,44 @@ export class HomePage {
     // client.profilPicURL="hh" ; 
 
 
-    var event = {} as Event;
-    event.description = "" ; 
-    event.eventPic ="" ; 
-    event.listComments = [] ; 
-    event.nbTicketDispo = 50 ; 
-    event.nomEvent = "" ; 
-    event.posLang = 1 ; 
-    event.posLat = 1 ; 
-    
-    this.itemsCollection.add(event).then(data=>{
+    var subEvent = {} as Event;
+    subEvent.description = "" ; 
+    subEvent.eventPic ="" ; 
+    subEvent.listComments = [] ; 
+    subEvent.nbTicketDispo = 50 ; 
+    subEvent.nomEvent = "" ; 
+    subEvent.posLang = 1 ; 
+    subEvent.posLat = 1 ; 
+    subEvent.categ = "concert" ; 
+
+    var subEvent1 = {} as Event;
+    subEvent1.description = "" ; 
+    subEvent1.eventPic ="" ; 
+    subEvent1.listComments = [] ; 
+    subEvent1.nbTicketDispo = 50 ; 
+    subEvent1.nomEvent = "" ; 
+    subEvent1.posLang = 1 ; 
+    subEvent1.posLat = 1 ; 
+    subEvent1.categ = "concert" ; 
+
+
+    var event1 = {} as Event;
+    event1.description = "" ; 
+    event1.dateDebutFest = 0 ; 
+    event1.dateFinFest = 0 ; 
+    event1.eventPic ="" ; 
+    event1.listComments = [] ; 
+    event1.nbTicketDispo = 50 ; 
+    event1.nomEvent = "" ; 
+    event1.posLang = 1 ; 
+    event1.posLat = 1 ; 
+    event1.categ = "festival" ; 
+    event1.eventsFest = [] ; 
+    event1.eventsFest.push(subEvent) ;
+    event1.eventsFest.push(subEvent1) ; 
+
+
+    this.itemsCollection.add(event1).then(data=>{
       console.log(data);
     }).catch(err =>{
       console.log(err);
