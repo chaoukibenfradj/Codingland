@@ -1,5 +1,7 @@
 {
   "name": "CodingLand",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
