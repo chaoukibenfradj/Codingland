@@ -9,6 +9,8 @@ export interface Event{
     posLang ? : number ; 
     posLat? : number ; 
 
+    prixTicket?: number ; 
+
     nbTicketDispo? : number ; 
 
     nbPersonInterest : number ;
@@ -22,6 +24,13 @@ export interface Event{
     dateFinFest? : number ; 
     
     eventsFest?: Event[]; 
+
+    adressEvent?: string; 
+    
+    infoline? : string ;
+
+    adresseMailInfoline? : string  ;
+
 
 
 }
