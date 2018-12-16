@@ -9,3 +9,25 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+
+.modalClass{
+    height: 70%; 
+    width: 70% ;
+}
+
+.ionCont{
+    --background: #fff url('assets/MenuBackground.png') no-repeat center center / cover ;
+}
+
+.list-md{
+    --background-color: transparent !important ; 
+
+}
+.item-native{
+    --background-color: transparent !important ; 
+}
+.listTrans{
+    --background-color: transparent !important ; 
+    --ion-item-background : transparent !important ; 
+}

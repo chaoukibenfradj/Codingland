@@ -1,0 +1,57 @@
+<ion-content class="signup-page">
+
+    <div class="logo-container" *ngIf="!isSignedUp">
+        <img src="../../assets/logo-blanc.png">
+    </div>
+
+    <div class="slides-container" *ngIf="!isSignedUp">
+        <ion-slides (ionSlideDidChange)="slideChanged()">
+            <ion-slide class="slide">
+                <div class="list-container">
+                    <p>Vous êtes..?</p>
+
+                    <ion-list no-lines>
+                        <button ion-item class="option" (click)="selectUserType(1)">
+                            Createur
+                        </button>
+                        <button ion-item class="option" (click)="selectUserType(2)">
+                            Client
+                        </button>
+                    </ion-list>
+                </div>
+         </ion-slide>
+        <ion-slide class="slide">
+            <div class="form-container">
+                <p>Saisissez vos données...</p>
+
+                <ion-item class="float-lbl-input">
+                    <ion-label floating>Votre Prénom</ion-label>
+                    <ion-input type="text" [(ngModel)]="user.prenom"></ion-input>
+                </ion-item>
+
+                <ion-item class="float-lbl-input">
+                    <ion-label floating>Votre Nom</ion-label>
+                    <ion-input type="text" [(ngModel)]="user.nom"></ion-input>
+                </ion-item>
+
+                <ion-item class="float-lbl-input">
+                    <ion-label floating>Votre Email</ion-label>
+                    <ion-input type="text" [(ngModel)]="credentials.email"></ion-input>
+                </ion-item>
+
+                <ion-item class="float-lbl-input">
+                    <ion-label floating>Votre Mot de Passe</ion-label>
+                    <ion-input type="password" [(ngModel)]="credentials.password"></ion-input>
+                </ion-item>
+
+                <ion-item class="float-lbl-input">
+                    <ion-label floating>Confirmez votre Mot de Passe</ion-label>
+                    <ion-input type="password" [(ngModel)]="passwordConfirmation"></ion-input>
+                </ion-item>
+                <ion-button expand="full"  color="dark" (click)="Signup()">registre</ion-button>
+            </div>
+            
+        </ion-slide>
+        
+            
+        

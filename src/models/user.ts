@@ -16,6 +16,8 @@ export interface Client{
 
     interestedEvents?: Event[] ; 
 
+    userType ? : string ;
+
 
 
 

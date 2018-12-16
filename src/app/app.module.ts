@@ -1,3 +1,4 @@
+import { EventService } from './../serviceEvent/eventService';
 import { PayerPage } from './payer/payer.page';
 import { ReservationModalPage } from './reservation-modal/reservation-modal.page';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -14,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 
 
@@ -25,11 +27,12 @@ import { environment } from '../environments/environment';
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.fireBaseConfig),
-    
+    AngularFireAuthModule
 
   ],
   providers: [
     StatusBar,
+    EventService,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AngularFirestore

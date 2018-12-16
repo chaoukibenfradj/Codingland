@@ -1,0 +1,39 @@
+
+<ion-header>
+    <ion-toolbar color="medium">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Accueil
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content no-padding color="light">
+    <ion-spinner *ngIf="showLoading" style="margin : auto auto; display:table"></ion-spinner>
+  <ion-card *ngFor="let i of events;" >
+      <ion-card-content>
+        <div>
+          <ion-card-title>
+              <img src="../../assets/imgs/star-jaune.png" alt="star" class="star" *ngIf="i.status==1" (click)="dislike(i)">          
+              <img src="../../assets/imgs/star-gris.png" alt="star" class="star" *ngIf="i.status==0" (click)="like(i)">
+              <div class="avatar-container">
+                  <div class="avatar-green-bg">
+                      <img src="../../assets/imgs/default-avatar.png">
+                  </div>
+              </div>
+            {{i.nomEvent}}
+            
+          </ion-card-title>
+          </div>
+          <p class="cardContent">
+            The most popular industrial group ever, and largely
+            responsible for bringing the music to a mass audience.
+          </p>
+        </ion-card-content>
+    <img src="{{i.eventPic}}" height="210px" (click)="detail(i)"/>
+    <ion-button expand="full"  color="warning" (click)="presentModal(i)">Réserver</ion-button>
+  </ion-card>
+ 
+</ion-content>

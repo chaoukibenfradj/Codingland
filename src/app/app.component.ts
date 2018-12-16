@@ -12,13 +12,28 @@ export class AppComponent {
   public appPages = [
     {
       title: 'Home',
-      url: '/home',
+      url: '/Accueil',
       icon: 'home'
     },
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
+      title: 'Evenement',
+      url: '/events/all',
+      icon: 'calendar'
+    },
+    {
+      title: 'Sport',
+      url: '/events/Sport',
+      icon: 'football'
+    },
+    {
+      title: 'Concert',
+      url: '/events/Concert',
+      icon: 'musical-notes'
+    },
+    {
+      title: 'Théâtre',
+      url: '/events/Theatre',
+      icon: 'easel'
     }
   ];
 

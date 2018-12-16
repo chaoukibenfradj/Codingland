@@ -1,0 +1,26 @@
+
+<ion-content class="login-page">
+
+    <div class="logo-container">
+        <img src="../../assets/logo-blanc.png">
+    </div>
+
+    <div class="login-form-container">
+        <ion-item class="float-lbl-input">
+            <ion-label floating>Votre email</ion-label>
+            <ion-input type="text" [(ngModel)]="credentials.email"></ion-input>
+        </ion-item>
+
+        <ion-item class="float-lbl-input">
+            <ion-label floating>Votre mot de passe</ion-label>
+            <ion-input type="password" [(ngModel)]="credentials.password"></ion-input>
+        </ion-item>
+    </div>
+
+    <div class="action-container">
+        <ion-button expand="full"  color="dark" (click)="login()">Se connecter</ion-button>
+        <p class="signup-link">Vous n'avez pas de compte?<br><span (click)="navigate()">Inscrivez vous!</span>
+        </p>
+    </div>
+
+</ion-content>

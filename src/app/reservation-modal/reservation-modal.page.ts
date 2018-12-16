@@ -15,6 +15,7 @@ export class ReservationModalPage implements OnInit {
   payType : any ; 
 
   @Input("event") event : any;
+
   eventObj :any ;
   constructor(private router:Router, private modalCtrl : ModalController) { }
 
@@ -38,8 +39,6 @@ export class ReservationModalPage implements OnInit {
     this.modalCtrl.dismiss() ; 
     this.router.navigateByUrl("/Payer");
 
-    
-    
   }
 
   

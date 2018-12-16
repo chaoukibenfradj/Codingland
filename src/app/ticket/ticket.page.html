@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-toolbar color="medium">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      
+      <ion-title>
+        Ticket
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="login-content" padding>
+
+   <img src={{this.qrAPI}} style="margin: auto auto; display: flex;"> 
+
+   <ion-grid>
+
+      <ion-row class="center">
+          <ion-col></ion-col>
+        <ion-col size="12" push="0" class="myTitle" text-center>
+          <div>
+           Client : {{ticket.client.nom}} {{ticket.client.prenom}}
+          </div>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+
+   </ion-grid>
+   <ion-grid>
+      <ion-row class="center">
+          <ion-col size="12" push="0"  class="myTitle" text-center>
+            <div>
+             Date Achat : {{ticket.dateAchat | date : 'dd/MM/yyyy, hh:mm a'}} 
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="12" push="0" class="myTitle" text-center>
+              <div >
+                Evenement : {{ticket.event.nomEvent}} 
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="center">
+              <ion-col size="12" push="0" class="myTitle" text-center>
+                <div >
+                 - {{ticket.nbPlace}} <span style="color: #fad600">x</span> {{ticket.event.prixTicket}} DT -
+                </div>
+              </ion-col>
+            </ion-row>
+    </ion-grid>
+
+
+</ion-content>

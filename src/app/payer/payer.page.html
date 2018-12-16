@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="medium">
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
@@ -20,8 +20,6 @@
           <ion-row>
             <ion-col>
               <ion-list no-lines>
-
-                
 
                 <ion-item>
                   <ion-icon name="ios-at-outline" item-left></ion-icon>
@@ -59,5 +57,5 @@
 
   
 <ion-footer>
-    <ion-button expand="full" >Payer</ion-button>
+    <ion-button expand="full" (click)="gotoToPayer()" color="warning" >Payer</ion-button>
 </ion-footer>

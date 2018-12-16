@@ -2,6 +2,7 @@ import { Comment } from "./comment";
 
 export interface Event{
 
+    status? : number ;
     eventPic? : string; 
     description? : string ; 
 

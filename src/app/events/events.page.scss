@@ -1,0 +1,57 @@
+
+    
+.colors{
+    background: white !important;
+    margin-bottom: 10%;
+}
+
+ion-card-title{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.avatar-container {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 20px;
+    box-sizing: border-box;
+
+    .avatar-green-bg {
+        width: 50px;
+        height: 50px;
+        box-sizing: border-box;
+        // background: rgba(0, 170, 141, 0.6);
+        background: #00BF9A;
+        border-radius: 50%;
+        border: 2px solid;
+        border-color: rgba(255, 171, 0, 0.8);
+        position: relative;
+
+        img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-radius: 50%;
+        }
+    }
+}
+
+.user-details-container {
+    float: right;
+}
+
+button{
+    width: 100%;
+    background: #ffce00;
+}
+
+.star{
+    height: 24px;
+    width: 24px;
+    float: right;
+    left: 50%;
+    
+}

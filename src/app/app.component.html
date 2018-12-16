@@ -2,14 +2,16 @@
   <ion-split-pane>
     <ion-menu>
       <ion-header>
-        <ion-toolbar>
-          <ion-title>Menu</ion-title>
+        <ion-toolbar color="medium">
+          <ion-title>
+            <img src="assets/logo-blanc.png" style="max-width: 70% !important">
+          </ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content>
-        <ion-list>
+      <ion-content class="ionCont">
+        <ion-list class="listTrans" >
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]" style="font-weight: bold !important ; color: #fff;">
               <ion-icon slot="start" [name]="p.icon"></ion-icon>
               <ion-label>
                 {{p.title}}
