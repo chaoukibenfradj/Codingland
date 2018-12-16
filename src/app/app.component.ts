@@ -34,6 +34,17 @@ export class AppComponent {
       title: 'Théâtre',
       url: '/events/Theatre',
       icon: 'easel'
+    }, 
+    {
+      title: 'Mes Evenement',
+      url : '/personaliseCreateur', 
+      icon :'calendar'
+    }, 
+    {
+      title: 'Se déconnecter',
+      url : '/Logout', 
+      icon :'exit'
+
     }
   ];
 

@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>Evenement Createur
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding  color="light">
+
+<ion-card *ngFor="let e of listEvent " class="colors" (click)="eventpass(e)">
+  <span *ngIf="e.categ!='festival'">
+  <img src="{{e.eventPic}}" (click)="like(e)"/>
+  <ion-card-content>
+      <div class="feedback-header">
+          <img src="../../assets/star-jaune.png"  (click)="dislike(e)" class="star" *ngIf="e.status==1" >          
+            <img src="../../assets/star-gris.png"  class="star" *ngIf="e.status==0" >
+            <div class="avatar-container">
+              <div class="avatar-green-bg">
+                  <img src="../../assets/user_comment.png">
+              </div>
+          </div>
+          </div>
+    <ion-card-title >
+      {{e.nomEvent}}
+      </ion-card-title>
+    <p class="user-details-container">
+      {{e.description}}
+    </p>
+    
+  </ion-card-content>
+  
+</span>
+</ion-card>
+</ion-content>

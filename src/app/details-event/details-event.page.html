@@ -1,0 +1,76 @@
+
+<ion-header>
+    <ion-toolbar  class="tool">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content color="light">
+    <ion-card>
+        <ion-card-content>
+          <div>
+            <ion-card-title>
+                <span *ngIf="user.email!=event.creerPar">
+                <img src="../../assets/imgs/star-jaune.png" alt="star" class="star" *ngIf="event.status==1" (click)="dislike(i)">          
+                <img src="../../assets/imgs/star-gris.png" alt="star" class="star" *ngIf="event.status==0" (click)="like(i)">
+                </span>
+                <div class="avatar-container">
+                    <div class="avatar-green-bg">
+                        <img src="../../assets/imgs/default-avatar.png">
+                    </div>
+                </div>
+            
+                {{event.nomEvent}}
+            </ion-card-title>
+            </div>
+            
+            <p class="cardContent">
+              
+             {{event.description}}     
+            </p>
+            <p>
+                <span ><b>Email infoline:</b> {{event.adresseMailInfoline}}</span>
+             
+            </p>
+            <p>
+                
+             <b>Tel infoline</b> {{event.infoline}}
+            </p>
+
+            <div *ngIf="user.email==event.creerPar">
+            <p>  
+                <b>Nb places dispo:</b> {{event.nbTicketDispo}}
+            </p>
+            <p>  
+                <b>Nb personne interresses:</b> {{event.nbTicketDispo}}
+            </p>
+          </div>
+          <div *ngIf="event.categ=='festival'">
+              <p>  
+                  <b>Debut Festivale:</b> {{event.dateDebutFest}}
+              </p>
+              <p>  
+                  <b>Fin Festivale:</b> {{event.dateFinFest}}
+              </p>
+            </div>
+            <p>  
+                <b> Date:</b> {{event. dateEvent| date: 'dd/MM/yyyy H:mm'}}
+            </p>
+          <p>  
+              <b> Adresse:</b> {{event. adressEvent}}
+          </p>
+            
+
+          </ion-card-content>
+      <img src="{{event.eventPic}}" height="210px" (click)="detail(i)"/>
+      <span *ngIf="user.email!=event.creerPar">
+            <ion-button expand="full"  color="warning" (click)="presentModal(i)">Réserver</ion-button>
+      </span>
+      
+    </ion-card>
+    
+</ion-content>
