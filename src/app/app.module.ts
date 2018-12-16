@@ -1,3 +1,5 @@
+import { PayerPage } from './payer/payer.page';
+import { ReservationModalPage } from './reservation-modal/reservation-modal.page';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,7 +18,7 @@ import { environment } from '../environments/environment';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, PayerPage],
   entryComponents: [],
   imports: [
     BrowserModule,

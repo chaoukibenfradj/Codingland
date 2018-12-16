@@ -4,6 +4,9 @@ import { Component } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { element } from '@angular/core/src/render3';
+import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { ReservationModalPage } from '../reservation-modal/reservation-modal.page';
 
 @Component({
   selector: 'app-home',
@@ -13,9 +16,9 @@ import { element } from '@angular/core/src/render3';
 export class HomePage {
   
   private itemsCollection: AngularFirestoreCollection<Event>;
-
+  public event2 = {} as Event;
   items : Observable<any[]>;
-  constructor(private db : AngularFirestore){
+  constructor(private db : AngularFirestore, private router : Router, private modalController : ModalController){
     // this.items = db.collection('users').valueChanges();
     
     // this.items.forEach(elem=>{
@@ -23,6 +26,13 @@ export class HomePage {
       
     // });
     this.itemsCollection = db.collection<Event>('event');
+
+    this.itemsCollection.valueChanges().subscribe(data=>{
+      console.log(data);
+      this.event2 = data[1] ; 
+      console.log();
+    });
+
 
     // var client = {} as Client ; 
     // client.UID = "tt"; 
@@ -82,19 +92,6 @@ export class HomePage {
     // event1.eventsFest.push(subEvent) ;
     // event1.eventsFest.push(subEvent1) ;
     
-    // var event2 = {} as Event;
-    // event2.description = "ee" ; 
-    // event2.eventPic ="ee" ; 
-    // event2.listComments = [] ; 
-    // event2.nbTicketDispo = 50 ; 
-    // event2.nomEvent = "Test" ; 
-    // event2.posLang = 1 ; 
-    // event2.posLat = 1 ; 
-    // event2.categ = "concert" ; 
-    // event2.prixTicket = 0 ; 
-    // event2.adressEvent = "" ; 
-    // event2.adresseMailInfoline=""  ;
-    // event2.infoline = "" ;
 
     // console.log(event2);
     
@@ -108,5 +105,16 @@ export class HomePage {
     // });
     
   }
+
+  async presentModal() {
+    console.log(JSON.stringify(this.event2));
+    const modal = await this.modalController.create({
+      component: ReservationModalPage,
+      componentProps: { event: JSON.stringify(this.event2) }
+    });
+    return await modal.present();
+  }
+
+
 
 }

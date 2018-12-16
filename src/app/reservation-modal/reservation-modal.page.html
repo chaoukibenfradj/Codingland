@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ReservationModal</ion-title>
+    <ion-buttons slot="end">
+        <ion-button (click)="close()"> 
+            <ion-icon name="close"></ion-icon>
+        </ion-button>
+        </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid style="margin-top: 16px !important; margin: auto auto; display: list-item ;">
+
+    <ion-row align-items-center>
+      <ion-col class="myTitle">
+        <ion-icon name="calendar"></ion-icon>
+        Nom événement :
+      </ion-col>
+      <ion-col class="props">
+        {{this.eventObj.nomEvent}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row align-items-center>
+        <ion-col class="myTitle">
+          <ion-icon name="calendar"></ion-icon>
+          Date evenement:
+        </ion-col>
+        <ion-col class="props">
+          {{this.eventObj.dateEvent | date : 'dd/MM/yyyy, hh:mm a' }}
+        </ion-col>
+      </ion-row>
+
+    <ion-row align-items-center>
+      <ion-col class="myTitle">
+        <ion-icon name="person"></ion-icon>
+        Utilisateur :
+      </ion-col>
+      <ion-col class="props">
+        Chaouki
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="margin: auto auto; display: table;">
+
+
+      <ion-list  radio-group [(ngModel)]="payType" name="payType" ngDefaultControl no-lines>
+        <ion-item>
+          <ion-label>
+
+            <img src="../../assets/images/visa_mastercard2.png" style="height: 16px;">
+
+          </ion-label>
+          <ion-radio value="visa" checked></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+
+            <img src="../../assets/images/poste_icon.jpg" style="height: 40px;">
+
+          </ion-label>
+          <ion-radio value="edinar"></ion-radio>
+        </ion-item>
+      </ion-list>
+
+
+
+
+    </ion-row>
+
+
+    <ion-row style="margin: auto auto; display: table;">
+        <ion-button size="small" fill="clear" (click)="minis()" >
+            <ion-icon name="remove"></ion-icon>      
+        </ion-button>
+        <span> {{placeResv}} </span>
+        <ion-button size="small" fill="clear" (click)="plus()" >
+
+            <ion-icon name="add"></ion-icon>
+
+        </ion-button>
+
+    </ion-row>
+
+    
+    <ion-row style="margin: auto auto; display: table; margin-top: 15px ;">
+
+      <span class="myTitle">Prix total : </span><span class="props">{{ prixUnitaire * placeResv}} D.T</span>
+
+    </ion-row>
+
+
+
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer>
+
+    <ion-button expand="full" (click)="gotoPayer()">Réserver</ion-button>
+</ion-footer>

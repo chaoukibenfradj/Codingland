@@ -11,6 +11,8 @@ export interface Event{
 
     prixTicket?: number ; 
 
+    dateEvent? : number ; 
+
     nbTicketDispo? : number ; 
 
     nbPersonInterest : number ;
